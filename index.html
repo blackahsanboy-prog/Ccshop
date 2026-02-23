@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ahsanccshop.in</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial,Helvetica,sans-serif;
+  background:linear-gradient(120deg,#0f0f1f,#1a1a2f,#0f0f1f);
+  color:#fff;
+}
+.card{
+  max-width:420px;
+  margin:30px auto 120px;
+  background:#0f1220;
+  border-radius:22px;
+  padding:20px;
+  border:2px solid #00e5ff;
+  box-shadow:0 15px 50px rgba(0,200,255,.25);
+  text-align:center;
+}
+
+/* BRAND */
+.brand{font-size:28px;font-weight:900}
+.arman{color:#00e5ff}
+.cc{margin:0 5px}
+.shop{color:#ffb300}
+.tag{font-size:12px;color:#aaa;margin-bottom:16px}
+
+/* PLAN */
+.plan{
+  padding:16px;
+  border-radius:18px;
+  margin-bottom:18px;
+  position:relative;
+}
+.normal{background:#071c30;border:1.5px solid #00c8ff}
+.premium{background:#2a1b05;border:1.5px solid #ffb300}
+
+.visa-badge{
+  position:absolute;top:10px;right:10px;
+  font-size:11px;font-weight:800;
+  padding:4px 10px;border-radius:12px;
+  background:#0b2a3d;color:#00e5ff;
+}
+.available{
+  position:absolute;top:10px;left:10px;
+  font-size:10px;font-weight:800;
+  padding:4px 10px;border-radius:12px;
+  background:rgba(0,255,120,.15);
+  color:#00ff85;
+}
+
+.price{font-size:26px;font-weight:900;margin-top:14px}
+.balance{font-size:12px;color:#00e676;margin-bottom:10px}
+
+/* REAL CARD */
+.card-info{
+  background:linear-gradient(135deg,#1b1f2e,#0b0e15);
+  border-radius:14px;
+  padding:12px 14px;
+  margin-bottom:12px;
+  text-align:left;
+  position:relative;
+  font-family:"Courier New",monospace;
+}
+.card-info .visa-logo{
+  position:absolute;top:8px;right:10px;
+  font-size:14px;font-weight:900;color:#00e5ff;
+}
+.card-number{
+  font-size:14px;
+  letter-spacing:1.5px;
+  margin-top:18px;
+}
+.card-details{
+  display:flex;
+  justify-content:space-between;
+  font-size:11px;
+  color:#9fdfff;
+  margin-top:6px;
+}
+
+/* BUTTON */
+button.pay{
+  width:100%;
+  padding:12px;
+  border:none;
+  border-radius:14px;
+  font-weight:900;
+  color:#fff;
+}
+.btn-normal{background:#008cff}
+.btn-premium{background:#ff9800}
+
+/* ===== PAYMENT SECTION (IMPROVED) ===== */
+#payment{
+  display:none;
+  padding:18px;
+  border-radius:20px;
+  background:linear-gradient(135deg,#0f1428,#151b35);
+  border:2px solid #00c8ff;
+  box-shadow:
+    0 0 25px rgba(0,200,255,.35),
+    inset 0 0 15px rgba(0,200,255,.15);
+}
+
+.pay-title{
+  font-size:22px;
+  font-weight:900;
+  margin-bottom:6px;
+}
+
+.pay-instruction{
+  font-size:13px;
+  color:#9fdfff;
+  margin-bottom:12px;
+}
+
+/* PAY BOX */
+.amount-box{
+  margin:10px auto 14px;
+  padding:14px;
+  font-size:22px;
+  font-weight:900;
+  border-radius:16px;
+  background:linear-gradient(135deg,#081a2f,#0d2745);
+  border:1.5px solid #00c8ff;
+  box-shadow:0 0 18px rgba(0,200,255,.5);
+}
+
+/* TIMER */
+.timer{
+  font-size:22px;
+  color:#ff5252;
+  margin-bottom:10px;
+}
+
+/* QR */
+.qr-note{
+  font-size:12px;
+  color:#00c8ff;
+  margin-bottom:8px;
+}
+.qr img{
+  width:200px;
+  background:#fff;
+  padding:10px;
+  border-radius:16px;
+  box-shadow:0 0 20px rgba(0,200,255,.6);
+}
+
+/* ACTIONS */
+.actions{display:flex;gap:10px;margin-top:14px}
+.done,.back{
+  flex:1;
+  padding:12px;
+  border-radius:14px;
+  font-weight:900;
+  border:none;
+}
+.done{
+  background:linear-gradient(135deg,#00ff9c,#00c853);
+  color:#003b1e;
+}
+.back{
+  background:linear-gradient(135deg,#2a2f45,#1b1f33);
+  color:#cfe8ff;
+}
+
+/* WHATSAPP */
+.whatsapp{
+  position:fixed;
+  right:16px;bottom:16px;
+  padding:12px 20px;
+  background:#25d366;
+  color:#000;
+  border-radius:40px;
+  font-weight:900;
+  text-decoration:none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<div id="plans">
+<div class="brand">
+  <span class="ahsan">AHSAN</span><span class="cc">CC</span><span class="shop">SHOP</span>
+</div>
+<div class="tag">Premium Digital Access</div>
+
+<div class="plan normal">
+<div class="visa-badge">VISA</div>
+<div class="available">AVAILABLE</div>
+<h3>NORMAL PLAN</h3>
+<div class="price">₹1,899</div>
+<div class="balance">$200+ USD</div>
+
+<div class="card-info">
+  <div class="visa-logo">VISA</div>
+  <div class="card-number">6129 xxxx xxxx 1078</div>
+  <div class="card-details"><span>CVV: 123</span><span>12/34</span></div>
+</div>
+
+<button class="pay btn-normal" onclick="openPay('NORMAL PLAN',1899)">PAY PAYMENT</button>
+</div>
+
+<div class="plan premium">
+<div class="visa-badge">VISA</div>
+<div class="available">AVAILABLE</div>
+<h3>PREMIUM PLAN</h3>
+<div class="price">₹2,999</div>
+<div class="balance">$400+ USD</div>
+
+<div class="card-info">
+  <div class="visa-logo">VISA</div>
+  <div class="card-number">4738 xxxx xxxx 9472</div>
+  <div class="card-details"><span>CVV: 987</span><span>11/33</span></div>
+</div>
+
+<button class="pay btn-premium" onclick="openPay('PREMIUM PLAN',2999)">PAY PAYMENT</button>
+</div>
+</div>
+
+<!-- PAYMENT -->
+<div id="payment">
+  <div class="pay-title" id="planName"></div>
+  <div class="pay-instruction">Scan & pay using the QR code below</div>
+
+  <div class="amount-box">
+    Pay ₹<span id="amountText"></span>
+  </div>
+
+  <div class="timer" id="timer">05:00</div>
+
+  <div class="qr-note">
+    UPI ID: <b id="upiText"></b><br>
+    Amount: ₹<b id="payAmount"></b>
+  </div>
+
+  <div class="qr"><img id="qrImg"></div>
+
+  <div class="actions">
+    <button class="done" onclick="donePay()">PAYMENT DONE</button>
+    <button class="back" onclick="goBack()">GO BACK</button>
+  </div>
+</div>
+
+</div>
+
+<a class="whatsapp" href="https://wa.me/918540957509" target="_blank">WhatsApp</a>
+
+<script>
+let timerInterval,timeLeft;
+
+function openPay(plan,amount){
+  document.getElementById("plans").style.display="none";
+  document.getElementById("payment").style.display="block";
+  document.getElementById("planName").innerText=plan;
+  document.getElementById("amountText").innerText=amount;
+  document.getElementById("upiText").innerText="ahsanzero9@ptyes";
+  document.getElementById("payAmount").innerText=amount;
+  document.getElementById("qrImg").src=
+   "https://api.qrserver.com/v1/create-qr-code/?size=300x300&data="+
+   encodeURIComponent(`upi://pay?pa=ahsanzero9@ptyes&am=${amount}&cu=INR`);
+  startTimer();
+}
+function startTimer(){
+  clearInterval(timerInterval);
+  timeLeft=300;
+  timerInterval=setInterval(()=>{
+    let m=Math.floor(timeLeft/60),s=timeLeft%60;
+    document.getElementById("timer").innerText=
+      String(m).padStart(2,'0')+":"+String(s).padStart(2,'0');
+    timeLeft--;
+  },1000);
+}
+function donePay(){window.open("https://wa.me/918540957509","_blank")}
+function goBack(){
+  clearInterval(timerInterval);
+  document.getElementById("payment").style.display="none";
+  document.getElementById("plans").style.display="block";
+}
+</script>
+
+</body>
+</html>
